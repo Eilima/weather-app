@@ -33,6 +33,13 @@ export class Display extends React.Component {
         })
     }
 
+    metricOrFaren = () => {
+        if (this.state.unitValue === 'metric') 
+            return 'C'
+        else 
+            return 'F'
+    }
+
 
     render(){
         return (
@@ -50,8 +57,8 @@ export class Display extends React.Component {
                     </form>
                     <h1 className='weather-info'>Location</h1>
                     <p className='weather-info'>{this.state.location}</p>
-                    <h1 className='weather-info'>Temperature</h1>
-                    <p className='weather-info'>{this.state.temperature === null ? '' : `${this.state.temperature}°${this.state.unitValue === 'metric' ? 'C' : 'F'}`} </p>
+                    <h1 className='weather-info'>Temperature ({this.metricOrFaren()}) </h1>
+                    <p className='weather-info'>{this.state.temperature === null ? '' : `${this.state.temperature}°${this.metricOrFaren()}`} </p>
                     <h1 className='weather-info'>Humidity</h1>
                     <p className='weather-info'>{this.state.humidity === null ? '' : `${this.state.humidity}%`}</p>
                 </div>
