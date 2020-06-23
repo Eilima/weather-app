@@ -10,17 +10,21 @@ export class Display extends React.Component {
         unitValue: 'metric'
     }
 
-    onClick = async (e) =>{
+    apiCall = async () => {
+            const apiKey = '3515eb54a10f2ef0d46d3777bab42cae'
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&units=${this.state.unitValue}&appid=${apiKey}`)
+            const data = await response.json()
+            this.setState({
+                location: data.name,
+                temperature: data.main.temp,
+                humidity: data.main.humidity,
+            })
+    }
+
+    onClick =  (e) => {
         e.preventDefault()
-        let tet = e.target.value
-        const apiKey = '3515eb54a10f2ef0d46d3777bab42cae'
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&units=${this.state.unitValue}&appid=${apiKey}`)
-        const data = await response.json()
-        this.setState({
-            location: data.name,
-            temperature: data.main.temp,
-            humidity: data.main.humidity,
-        })
+        this.apiCall()
+        
     }
 
     changeUnit = () => {
@@ -31,6 +35,11 @@ export class Display extends React.Component {
         : this.setState({
             unitValue: 'metric'
         })
+        
+        if (this.state.cityName !== null)
+            this.setState({
+                temperature: ((this.state.temperature * 9/5) + 32).toFixed(2)
+            })
     }
 
     metricOrFaren = () => {
@@ -39,6 +48,8 @@ export class Display extends React.Component {
         else 
             return 'F'
     }
+
+    // (0°C × 9/5) + 32 = 32°F
 
 
     render(){
