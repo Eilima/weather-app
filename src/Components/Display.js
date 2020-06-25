@@ -8,7 +8,9 @@ export class Display extends React.Component {
         humidity: null,
         cityName: null,
         unitValue: 'metric',
-        description: null
+        icon: null,
+        description: null,
+
     }
 
     apiCall = async () => {
@@ -19,6 +21,7 @@ export class Display extends React.Component {
                     location: data.name,
                     temperature: data.main.temp,
                     humidity: data.main.humidity,
+                    icon: data.weather[0].icon,
                     description: data.weather[0].description
                 })
     }
@@ -64,7 +67,8 @@ export class Display extends React.Component {
         if (this.state.humidity !== null) {
             return (
                 <div>
-                    <h4 className='weather-info-title'>{this.state.description}</h4>
+                    <img className='weather-info-title' src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`} ></img>
+                    <p>{this.state.description}</p>
                     <h4 className='weather-info-title'>Location</h4>
                     <p className='weather-info'>{this.state.location}</p>
                     <h4 className='weather-info-title'>Temperature ({this.metricOrFaren()}) </h4>
