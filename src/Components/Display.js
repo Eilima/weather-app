@@ -9,13 +9,22 @@ export class Display extends React.Component {
         unitValue: 'metric',
         icon: null,
         description: null,
-
+        error: false
     }
 
     apiCall = async () => {
+            this.setState({error: false})
             const apiKey = '3515eb54a10f2ef0d46d3777bab42cae'
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&units=${this.state.unitValue}&appid=${apiKey}`)
             const data = await response.json()
+            console.log(data)
+            if (data.cod === '404') {
+                console.log('404 error')
+                this.setState({error: true})
+
+            }
+            else
+            { 
                 this.setState({
                     location: data.name,
                     temperature: data.main.temp,
@@ -23,6 +32,7 @@ export class Display extends React.Component {
                     icon: data.weather[0].icon,
                     description: data.weather[0].description
                 })
+            }
     }
 
     onClick = (e) => {
@@ -63,7 +73,10 @@ export class Display extends React.Component {
     }
 
     infoDisplay = () => {
-        if (this.state.humidity !== null) {
+        if (this.state.error === true) {
+            return <p className='no-call'> <span style={{color:'#cc0000'}} >Invalid city name</span></p>
+        }
+        else if (this.state.humidity !== null) {
             return (
                 <div>
                     <img src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`} ></img>
