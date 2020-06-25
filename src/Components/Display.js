@@ -1,5 +1,4 @@
 import React from 'react'
-import {search} from '../OpenWeather'
 
 export class Display extends React.Component {
     state = {
@@ -63,7 +62,7 @@ export class Display extends React.Component {
             return 'F'
     }
 
-    apiCalled = () => {
+    infoDisplay = () => {
         if (this.state.humidity !== null) {
             return (
                 <div>
@@ -71,7 +70,7 @@ export class Display extends React.Component {
                     <p className='weather-info-title' >{this.state.description}</p>
                     <h4 className='weather-info-title'>Location</h4>
                     <p className='weather-info'>{this.state.location}</p>
-                    <h4 className='weather-info-title'>Temperature ({this.metricOrFaren()}) </h4>
+                    <h4 className='weather-info-title'>Temperature</h4>
                     <p className='weather-info'>{`${this.state.temperature}° ${this.metricOrFaren()}`} </p>
                     <h4 className='weather-info-title'>Humidity</h4>
                     <p className='weather-info' id='sun-icon' >{`${this.state.humidity}%`}</p>
@@ -90,13 +89,17 @@ export class Display extends React.Component {
                         <div className='weather-header' >
                             <input className='inputField' placeholder='City' type='text' onChange={e => this.setState({cityName: e.target.value})} ></input>
                             <button onClick={this.onClick}><i className="material-icons">search</i></button>
-                        </div>    
-                        <label className='switch'>
-                            <input onChange={e => this.switchFlip(e)} type='checkbox'/>
-                            <span className='slider round'></span>
-                        </label>
+                        </div>
+                        <div className='test' >
+                            C
+                            <label className='switch'>
+                                <input onChange={e => this.switchFlip(e)} type='checkbox'/>
+                                <span className='slider round'></span>
+                            </label>
+                            F
+                        </div>
                     </form>
-                        {this.apiCalled()}
+                        {this.infoDisplay()}
                 </div>
             </div>
         )
