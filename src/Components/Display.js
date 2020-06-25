@@ -72,7 +72,7 @@ export class Display extends React.Component {
                     <h4 className='weather-info-title'>Location</h4>
                     <p className='weather-info'>{this.state.location}</p>
                     <h4 className='weather-info-title'>Temperature ({this.metricOrFaren()}) </h4>
-                    <p className='weather-info'>{`${this.state.temperature}°${this.metricOrFaren()}`} </p>
+                    <p className='weather-info'>{`${this.state.temperature}° ${this.metricOrFaren()}`} </p>
                     <h4 className='weather-info-title'>Humidity</h4>
                     <p className='weather-info' id='sun-icon' >{`${this.state.humidity}%`}</p>
                 </div>
