@@ -19,6 +19,7 @@ export class Display extends React.Component {
                     location: data.name,
                     temperature: data.main.temp,
                     humidity: data.main.humidity,
+                    description: data.weather[0].description
                 })
     }
 
@@ -59,8 +60,23 @@ export class Display extends React.Component {
             return 'F'
     }
 
-    // (0°C × 9/5) + 32 = 32°F
-
+    apiCalled = () => {
+        if (this.state.humidity !== null) {
+            return (
+                <div>
+                    <h4 className='weather-info-title'>{this.state.description}</h4>
+                    <h4 className='weather-info-title'>Location</h4>
+                    <p className='weather-info'>{this.state.location}</p>
+                    <h4 className='weather-info-title'>Temperature ({this.metricOrFaren()}) </h4>
+                    <p className='weather-info'>{this.state.temperature === null ? '' : `${this.state.temperature}°${this.metricOrFaren()}`} </p>
+                    <h4 className='weather-info-title'>Humidity</h4>
+                    <p className='weather-info'>{this.state.humidity === null ? '' : `${this.state.humidity}%`}</p>
+                </div>
+            )
+        }
+        else 
+            return <p className='no-call' >No weather to display</p>
+    }
 
     render() { 
         return (
@@ -76,12 +92,7 @@ export class Display extends React.Component {
                             <span className='slider round'></span>
                         </label>
                     </form>
-                    <h1 className='weather-info'>Location</h1>
-                    <p className='weather-info'>{this.state.location}</p>
-                    <h1 className='weather-info'>Temperature ({this.metricOrFaren()}) </h1>
-                    <p className='weather-info'>{this.state.temperature === null ? '' : `${this.state.temperature}°${this.metricOrFaren()}`} </p>
-                    <h1 className='weather-info'>Humidity</h1>
-                    <p className='weather-info'>{this.state.humidity === null ? '' : `${this.state.humidity}%`}</p>
+                        {this.apiCalled()}
                 </div>
             </div>
         )
