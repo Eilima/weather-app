@@ -90,7 +90,7 @@ export class Display extends React.Component {
                             <input className='inputField' placeholder='City' type='text' onChange={e => this.setState({cityName: e.target.value})} ></input>
                             <button onClick={this.onClick}><i className="material-icons">search</i></button>
                         </div>
-                        <div className='test' >
+                        <div className='switch-slider' >
                             C
                             <label className='switch'>
                                 <input onChange={e => this.switchFlip(e)} type='checkbox'/>
