@@ -87,11 +87,18 @@ p.weather-info-title {
 
  /* The switch - the box around the slider */
   .switch {
+  
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin: 50px;
+  margin: 25px 13px;
+  
+}
+
+.test {
+  color: rgb(218, 218, 240);
+  font-size: 1.6rem;
 }
 
 /* Hide default HTML checkbox */
