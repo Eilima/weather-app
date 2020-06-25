@@ -58,7 +58,23 @@
 }
 
 .no-call {
-  color: rgb(218, 218, 240)
+  height: 120px;
+  color: rgb(218, 218, 240);
+  font-size: 1.3rem;
+}
+
+.no-call i {
+  color: yellow;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  animation: rotateSun 5s infinite linear;
+}
+
+@keyframes rotateSun {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 ::placeholder {

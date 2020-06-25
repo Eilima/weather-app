@@ -70,12 +70,12 @@ export class Display extends React.Component {
                     <h4 className='weather-info-title'>Temperature ({this.metricOrFaren()}) </h4>
                     <p className='weather-info'>{this.state.temperature === null ? '' : `${this.state.temperature}°${this.metricOrFaren()}`} </p>
                     <h4 className='weather-info-title'>Humidity</h4>
-                    <p className='weather-info'>{this.state.humidity === null ? '' : `${this.state.humidity}%`}</p>
+                    <p className='weather-info' id='sun-icon' >{this.state.humidity === null ? '' : `${this.state.humidity}%`}</p>
                 </div>
             )
         }
         else 
-            return <p className='no-call' >No weather to display</p>
+            return <p className='no-call'>No weather to display<i className='material-icons'>wb_sunny</i></p>
     }
 
     render() { 
