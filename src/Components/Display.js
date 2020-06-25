@@ -68,13 +68,13 @@ export class Display extends React.Component {
             return (
                 <div>
                     <img className='weather-info-title' src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`} ></img>
-                    <p>{this.state.description}</p>
+                    <p className='weather-info-title' >{this.state.description}</p>
                     <h4 className='weather-info-title'>Location</h4>
                     <p className='weather-info'>{this.state.location}</p>
                     <h4 className='weather-info-title'>Temperature ({this.metricOrFaren()}) </h4>
-                    <p className='weather-info'>{this.state.temperature === null ? '' : `${this.state.temperature}°${this.metricOrFaren()}`} </p>
+                    <p className='weather-info'>{`${this.state.temperature}°${this.metricOrFaren()}`} </p>
                     <h4 className='weather-info-title'>Humidity</h4>
-                    <p className='weather-info' id='sun-icon' >{this.state.humidity === null ? '' : `${this.state.humidity}%`}</p>
+                    <p className='weather-info' id='sun-icon' >{`${this.state.humidity}%`}</p>
                 </div>
             )
         }
