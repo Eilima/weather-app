@@ -14,7 +14,7 @@ export class Display extends React.Component {
 
     apiCall = async () => {
             this.setState({error: false})
-            const apiKey = '3515eb54a10f2ef0d46d3777bab42cae'
+            const apiKey = ''
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&units=${this.state.unitValue}&appid=${apiKey}`)
             const data = await response.json()
             console.log(data)
