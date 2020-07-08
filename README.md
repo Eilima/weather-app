@@ -7,4 +7,4 @@ Humidity
 
 City name
 
-Description of area weather
+Description of area's weather
