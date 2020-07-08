@@ -76,7 +76,7 @@ export class Display extends React.Component {
         else if (this.state.humidity !== null) {
             return (
                 <div>
-                    <img src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`} ></img>
+                    <img  alt={`Scene of ${this.state.description}`} src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`}/ >
                     <p className='weather-info-title' >{this.state.description}</p>
                     <h4 className='weather-info-title'>Location</h4>
                     <p className='weather-info'>{this.state.location}</p>
