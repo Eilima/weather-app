@@ -48,9 +48,6 @@ export class Display extends React.Component {
     switchFlip = (e) => {
         if (this.state.temperature === null)
             this.changeUnit()
-            
-        let originalTemp = this.state.temperature
-
         if (this.state.unitValue === 'imperial' && this.state.temperature !== null) {
             this.changeUnit()
             this.setState({
