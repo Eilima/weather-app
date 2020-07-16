@@ -10,4 +10,4 @@ City name
 Description of area's weather
 
 
-![Image of Yaktocat](./weather-app-demo-img/api-call-faren.png =100x20)
+![Image of Yaktocat](./weather-app-demo-img/api-call-faren.png =250)
