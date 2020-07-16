@@ -10,4 +10,4 @@ City name
 Description of area's weather
 
 
-<img src="./weather-app-demo-img/api-call-faren.png">
+<img src="./weather-app-demo-img/api-call-faren.png" width="128" height="128">
