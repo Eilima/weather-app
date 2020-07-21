@@ -18,7 +18,7 @@ export class Display extends React.Component {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.cityName}&units=${this.state.unitValue}&appid=${apiKey}`)
             const data = await response.json()
             console.log(data)
-            if (data.cod === '404') {
+            if (data.cod === '404' || data.cod === '400') {
                 console.log('404 error')
                 this.setState({error: true})
 
