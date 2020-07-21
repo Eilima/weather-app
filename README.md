@@ -11,8 +11,9 @@ Description of area's weather
 
 [DEMO](https://frosty-borg-2ef04d.netlify.app/)
 
+<img src="./weather-app-demo-img/empty-demo.png" width="480" height="480">
 <img src="./weather-app-demo-img/api-call.png" width="480" height="480">
 <img src="./weather-app-demo-img/api-call-faren.png" width="480" height="480">
-<img src="./weather-app-demo-img/empty-demo.png" width="480" height="480">
+
 
 
