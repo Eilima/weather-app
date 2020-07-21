@@ -158,4 +158,12 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-} 
+}
+
+.API-credit {
+  padding: 20px;
+  font-size: .95rem;
+}
+.API-credit a{
+  text-decoration: none;
+}
