@@ -19,8 +19,17 @@ export class Display extends React.Component {
             const data = await response.json()
             console.log(data)
             if (data.cod === '404' || data.cod === '400') {
-                console.log('404 error')
-                this.setState({error: true})
+                console.log(`${data.cod} error`)
+                this.setState({
+                    error: true,
+                    location: null,
+                    temperature: null,
+                    humidity: null,
+                    cityName: null,
+                    unitValue: 'metric',
+                    icon: null,
+                    description: null,
+                })
 
             }
             else
