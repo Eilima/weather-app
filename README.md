@@ -1,5 +1,5 @@
 # Weather App
-Displays the weather conditions for the city that is entered by calling the OpenWeather API.
+A React weather app created using [OpenWeatherMap](https://openweathermap.org/) API.
 ### Display Information
 Temperature
 
@@ -10,4 +10,6 @@ City name
 Description of area's weather
 
 
+<img src="./weather-app-demo-img/api-call.png" width="480" height="480">
 <img src="./weather-app-demo-img/api-call-faren.png" width="480" height="480">
+<img src="./weather-app-demo-img/empty-demo.png" width="480" height="480">
