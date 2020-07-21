@@ -1,5 +1,5 @@
 # Weather App
-Displays the weather conditions for the city that is entered by calling the OpenWeather API.
+A React weather app created using [OpenWeatherMap](https://openweathermap.org/) API.
 ### Display Information
 Temperature
 
