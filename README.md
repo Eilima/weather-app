@@ -14,7 +14,7 @@ Description of area's weather
 
 ### To-Do
 
-- [] Add ability to toggle
+- [ ] Add ability to toggle
 
 [DEMO](https://frosty-borg-2ef04d.netlify.app/)
 
