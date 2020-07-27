@@ -1,4 +1,5 @@
 import React from "react";
+import "./form.css";
 
 export class Form extends React.Component {
   render() {
@@ -11,7 +12,7 @@ export class Form extends React.Component {
             type="text"
             onChange={this.props.onChange}
           ></input>
-          <button onClick={this.props.formSubmit}>
+          <button className="search-icon" onClick={this.props.formSubmit}>
             <i className="material-icons">search</i>
           </button>
         </div>
