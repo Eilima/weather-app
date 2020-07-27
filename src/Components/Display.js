@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch } from "./Switch";
 import { Form } from "./Form/Form";
+import { TemperatureSwitch } from "./TemperatureSwitch/TemperatureSwitch";
 
 export class Display extends React.Component {
   state = {
@@ -132,14 +133,7 @@ export class Display extends React.Component {
         <div className="infoBox">
           <Switch forecast={this.state.forecast} />
           <Form onChange={this.updateCityName} formSubmit={this.formSubmit} />
-          <div className="switch-slider">
-            C
-            <label className="switch">
-              <input onChange={(e) => this.switchFlip(e)} type="checkbox" />
-              <span className="slider round"></span>
-            </label>
-            F
-          </div>
+          <TemperatureSwitch switchFlip={this.switchFlip} />
           {this.infoDisplay()}
         </div>
       </div>
