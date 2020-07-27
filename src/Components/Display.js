@@ -1,5 +1,7 @@
 import React from "react";
-import { Switch } from "./Switch";
+import { Switch } from "./Switch/Switch";
+import { Form } from "./Form/Form";
+import { TemperatureSwitch } from "./TemperatureSwitch/TemperatureSwitch";
 
 export class Display extends React.Component {
   state = {
@@ -45,7 +47,13 @@ export class Display extends React.Component {
     }
   };
 
-  onClick = (e) => {
+  updateCityName = (e) => {
+    this.setState({
+      cityName: e.target.value,
+    });
+  };
+
+  formSubmit = (e) => {
     e.preventDefault();
     this.apiCall();
   };
@@ -124,27 +132,8 @@ export class Display extends React.Component {
       <div>
         <div className="infoBox">
           <Switch forecast={this.state.forecast} />
-          <form>
-            <div className="weather-header">
-              <input
-                className="inputField"
-                placeholder="City"
-                type="text"
-                onChange={(e) => this.setState({ cityName: e.target.value })}
-              ></input>
-              <button onClick={this.onClick}>
-                <i className="material-icons">search</i>
-              </button>
-            </div>
-            <div className="switch-slider">
-              C
-              <label className="switch">
-                <input onChange={(e) => this.switchFlip(e)} type="checkbox" />
-                <span className="slider round"></span>
-              </label>
-              F
-            </div>
-          </form>
+          <Form onChange={this.updateCityName} formSubmit={this.formSubmit} />
+          <TemperatureSwitch switchFlip={this.switchFlip} />
           {this.infoDisplay()}
         </div>
       </div>

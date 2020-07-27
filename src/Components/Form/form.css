@@ -1,0 +1,28 @@
+.weather-header {
+  display: flex;
+  border-bottom: 1px solid rgb(218, 218, 240);
+  width: 80%;
+  margin: auto;
+}
+
+.weather-header button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.inputField {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 4px;
+  width: 100%;
+  color: rgb(218, 218, 240);
+  font-size: 1.2rem;
+}
+
+.search-icon {
+  margin-left: -2.5rem;
+  margin-right: 2.5rem;
+}
