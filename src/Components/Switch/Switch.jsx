@@ -1,4 +1,5 @@
 import React from "react";
+import "./Switch.css";
 
 export class Switch extends React.Component {
   render() {
