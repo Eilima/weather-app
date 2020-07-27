@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch } from "./Switch";
+import { Switch } from "./Switch/Switch";
 import { Form } from "./Form/Form";
 import { TemperatureSwitch } from "./TemperatureSwitch/TemperatureSwitch";
 
