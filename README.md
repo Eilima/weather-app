@@ -14,11 +14,9 @@ Description of area's weather
 
 ### To-Do
 
-<<<<<<< HEAD
+
 - [ ] Add ability to toggle between current and weekly forecast
-=======
-- [ ] Add ability to toggle
->>>>>>> testing
+
 
 [DEMO](https://frosty-borg-2ef04d.netlify.app/)
 
