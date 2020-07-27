@@ -1,4 +1,5 @@
 import React from "react";
+import { Switch } from "./Switch";
 
 export class Display extends React.Component {
   state = {
@@ -10,6 +11,7 @@ export class Display extends React.Component {
     icon: null,
     description: null,
     error: false,
+    forecast: "current",
   };
 
   apiCall = async () => {
@@ -121,6 +123,7 @@ export class Display extends React.Component {
     return (
       <div>
         <div className="infoBox">
+          <Switch forecast={this.state.forecast} />
           <form>
             <div className="weather-header">
               <input
