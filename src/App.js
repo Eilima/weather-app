@@ -12,7 +12,14 @@ function App() {
         </span>
       </header>
       <footer>
-        <img src='./GitHub-Mark-Light-120px-plus.png' />
+        <a href="https://Github.com">
+          <img
+            className="logo-img"
+            src="https://cdn.discordapp.com/attachments/734243092961689744/743647589504647248/GitHub-Mark-120px-plus.png"
+            alt="link to personal github"
+            width="50px"
+          />
+        </a>
       </footer>
     </div>
   );

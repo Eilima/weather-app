@@ -76,3 +76,10 @@ p.weather-info-title {
   margin-right: -5rem;
   margin-left: 5rem;
 } */
+footer {
+  background: linear-gradient(to right, #e67e22, #e74c3c);
+}
+
+.logo-img {
+  display: flex;
+}
