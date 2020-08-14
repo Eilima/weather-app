@@ -131,7 +131,6 @@ export class Display extends React.Component {
     return (
       <div>
         <div className="infoBox">
-          <Switch forecast={this.state.forecast} />
           <Form onChange={this.updateCityName} formSubmit={this.formSubmit} />
           <TemperatureSwitch switchFlip={this.switchFlip} />
           {this.infoDisplay()}
