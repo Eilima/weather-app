@@ -11,6 +11,9 @@ function App() {
           Powered by <a href="https://openweathermap.org/api">OpenWeatherMap</a>
         </span>
       </header>
+      <footer>
+        <img src='./GitHub-Mark-Light-120px-plus.png' />
+      </footer>
     </div>
   );
 }
